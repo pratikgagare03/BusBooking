@@ -33,7 +33,8 @@ type Booking struct {
 // ------------------------
 // Total Fare:
 type Bill struct {
-	Bus_Number   int  `json:"busno"`
+	BookingId    int     `json:"id"`
+	Bus_Number   int     `json:"busno"`
 	Booked_Seats int     `json:"bookedseats"`
 	Source       string  `json:"source"`
 	Dest         string  `json:"dest"`

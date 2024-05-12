@@ -1,23 +1,24 @@
 package book
 
 import (
+	"busbooking/db"
 	"busbooking/types"
 	"encoding/json"
 	"net/http"
 	"time"
 )
 
-func BookingHandler(buses *[]types.Bus) http.HandlerFunc {
+func BookingHandler(buses []types.Bus) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		booking := types.Booking{}
 		err := json.NewDecoder(r.Body).Decode(&booking)
 		if err != nil {
-			panic(err)
+			http.Error(w, "Error decoding JSON", http.StatusBadRequest)
 		}
 
 		bill := types.Bill{}
 		bookingDone := false
-		for _, val := range *buses {
+		for _, val := range buses {
 			if !val.BookedStatus[booking.Date] && val.Source == booking.Source {
 				val.BookedStatus[booking.Date] = true
 				bill.Bus_Number = val.No
@@ -30,13 +31,17 @@ func BookingHandler(buses *[]types.Bus) http.HandlerFunc {
 				bill.Dest = booking.Dest
 				bill.Booked_Seats = val.Seats
 				bookingDone = true
-
 				break
 			}
 		}
+
 		if bookingDone {
-			billjson, _ := json.Marshal(bill)
+			billId := *db.GetId()
+			bill.BookingId = billId
+			(*db.GetBillMap())[billId] = bill
+
 			w.Header().Set("Content-Type", "application/json")
+			billjson, _ := json.Marshal(bill)
 			w.Write(billjson)
 		} else {
 			w.Header().Set("Content-Type", "application/json")

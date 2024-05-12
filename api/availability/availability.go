@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-func Check_availability(buses *[]types.Bus) http.HandlerFunc {
+func Check_availability(buses []types.Bus) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		date := r.FormValue("date")
 		var op []types.Bus
 
-		for _, val := range *buses {
+		for _, val := range buses {
 			if !val.BookedStatus[date] {
 				op = append(op, val)
 			}

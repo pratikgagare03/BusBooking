@@ -3,6 +3,7 @@ package main
 import (
 	"busbooking/availability"
 	"busbooking/book"
+	"busbooking/cancel"
 	"busbooking/logger"
 	"busbooking/types"
 	"busbooking/utils"
@@ -13,8 +14,9 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func setupRoutes(buses *[]types.Bus) {
+func setupRoutes(buses []types.Bus) {
 	http.HandleFunc("/check_availability", availability.Check_availability(buses))
+	http.HandleFunc("/cancel_booking", cancel.CancelBooking(buses))
 	http.HandleFunc("/book", book.BookingHandler(buses))
 }
 

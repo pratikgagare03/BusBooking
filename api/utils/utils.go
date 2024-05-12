@@ -5,9 +5,8 @@ import (
 	"time"
 )
 
-func CreateBuses() *[]types.Bus {
+func CreateBuses() []types.Bus {
 	buses := make([]types.Bus, 0, 10)
-
 	Currtime := time.Now()
 	for i := 0; i < 10; i++ {
 		Currtime = Currtime.Add(time.Hour * 2)
@@ -31,6 +30,6 @@ func CreateBuses() *[]types.Bus {
 		})
 	}
 
-	return &buses
+	return buses
 
 }
