@@ -61,3 +61,100 @@
 
 {"level":"info","time":"2024-05-13T01:10:01+05:30","message":"Logger Initialized"}
 {"level":"info","time":"2024-05-13T01:10:01+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T10:37:36+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T10:37:36+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T10:43:33+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T10:43:33+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T10:53:38+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T10:53:38+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T10:56:29+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T10:56:29+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T10:58:51+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T10:58:51+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:04:00+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:04:00+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:05:30+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:05:30+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:07:02+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:07:02+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:12:05+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:12:05+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:24:01+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:24:01+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:48:22+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:48:22+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:49:32+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:49:32+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:50:08+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:50:08+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T11:51:26+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T11:51:26+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T12:39:38+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T12:39:38+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T12:42:22+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T12:42:22+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T12:42:48+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T12:42:48+05:30","message":"Started Main"}
+{"level":"error","time":"2024-05-13T12:42:59+05:30","message":"Dates before today's date not allowed"}
+
+{"level":"info","time":"2024-05-13T13:02:41+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T13:02:41+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:14:05+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:14:05+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:15:15+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:15:15+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:18:44+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:18:44+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:20:26+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:20:26+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:22:15+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:22:15+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:23:52+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:23:52+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:27:17+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:27:17+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:31:02+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:31:02+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:32:22+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:32:22+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:32:29+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:32:29+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:36:41+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:36:41+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:37:48+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:37:48+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:41:06+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:41:06+05:30","message":"Started Main"}
+
+{"level":"info","time":"2024-05-13T14:55:42+05:30","message":"Logger Initialized"}
+{"level":"info","time":"2024-05-13T14:55:42+05:30","message":"Started Main"}

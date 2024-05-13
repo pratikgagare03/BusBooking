@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func CreateBuses() []types.Bus {
+func CreateBuses() *[]types.Bus {
 	buses := make([]types.Bus, 0, 10)
 	Currtime := time.Now()
 	for i := 0; i < 10; i++ {
@@ -19,17 +19,18 @@ func CreateBuses() []types.Bus {
 			dest = "Pune"
 		}
 		buses = append(buses, types.Bus{
-			No:           i + 1,
-			Seats:        40,
-			Source:       src,
-			Dest:         dest,
-			Fare:         500,
-			BoardingTime: Currtime.Format("15:04"),
-			DroppingTime: Currtime.Add(time.Hour * 5).Format("15:04"),
-			BookedStatus: make(map[string]bool),
+			No:             i + 1,
+			TotalSeats:     40,
+			AvailableSeats: 40,
+			Source:         src,
+			Dest:           dest,
+			Fare:           500,
+			BoardingTime:   Currtime.Format("15:04"),
+			DroppingTime:   Currtime.Add(time.Hour * 5).Format("15:04"),
+			BookedStatus:   make(map[string]bool),
 		})
 	}
 
-	return buses
+	return &buses
 
 }

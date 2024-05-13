@@ -1,14 +1,15 @@
 package types
 
 type Bus struct {
-	No           int
-	Seats        int
-	Source       string
-	Dest         string
-	Fare         float64
-	BoardingTime string
-	DroppingTime string
-	BookedStatus map[string]bool
+	No             int             `json:"busno"`
+	TotalSeats     int             `json:"totalseats"`
+	AvailableSeats int             `json:"availableseats"`
+	Source         string          `json:"source"`
+	Dest           string          `json:"dest"`
+	Fare           float64         `json:"fare"`
+	BoardingTime   string          `json:"boardingTime"`
+	DroppingTime   string          `json:"droppingTime"`
+	BookedStatus   map[string]bool `json:"-"`
 }
 
 type Customer struct {
@@ -17,11 +18,12 @@ type Customer struct {
 }
 
 type Booking struct {
-	Name    string `json:"name"`
-	Contact string `json:"contact"`
-	Date    string `json:"date"`
-	Source  string `json:"source"`
-	Dest    string `json:"dest"`
+	Name        string `json:"name"`
+	Contact     string `json:"contact"`
+	JourneyDate string `json:"date"`
+	Source      string `json:"source"`
+	Dest        string `json:"dest"`
+	NoOfSeats   int    `json:"seats"`
 }
 
 // Agency name: xyz travels, Date:

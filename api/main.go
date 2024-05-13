@@ -5,6 +5,7 @@ import (
 	"busbooking/book"
 	"busbooking/cancel"
 	"busbooking/logger"
+	"busbooking/printBill"
 	"busbooking/types"
 	"busbooking/utils"
 	"fmt"
@@ -14,13 +15,15 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func setupRoutes(buses []types.Bus) {
+func setupRoutes(buses *[]types.Bus) {
 	http.HandleFunc("/check_availability", availability.Check_availability(buses))
 	http.HandleFunc("/cancel_booking", cancel.CancelBooking(buses))
 	http.HandleFunc("/book", book.BookingHandler(buses))
+	http.HandleFunc("/printbill", printBill.Print)
 }
 
 func startServer() {
+
 	fmt.Printf("localhost started at port%v", os.Getenv("APP_PORT"))
 	err := http.ListenAndServe(os.Getenv("APP_PORT"), nil)
 	if err != nil {
@@ -39,6 +42,5 @@ func main() {
 	buses := utils.CreateBuses()
 	setupRoutes(buses)
 	startServer()
-
 	logger.Logs.Info().Msg("Main Function over")
 }
