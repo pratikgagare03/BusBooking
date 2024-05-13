@@ -21,7 +21,7 @@ func CancelBooking(buses *[]types.Bus) http.HandlerFunc {
 		data, exists := db.BillIdToBill[int(bookingIdInt)]
 		var msgjson []byte
 		if exists {
-			delete((*buses)[data.Bus_Number-1].BookedStatus, data.JounrneyDate)
+			(*buses)[data.Bus_Number-1].AvailableSeatsOnDate[data.JounrneyDate] += data.Booked_Seats
 			delete(db.BillIdToBill, data.BookingId)
 			msgjson, _ = json.Marshal("Booking Cancelled Successful")
 		} else {

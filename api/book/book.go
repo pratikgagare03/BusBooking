@@ -4,6 +4,7 @@ import (
 	"busbooking/db"
 	"busbooking/logger"
 	"busbooking/types"
+	"busbooking/utils"
 	"encoding/json"
 	"net/http"
 	"time"
@@ -19,12 +20,13 @@ func BookingHandler(buses *[]types.Bus) http.HandlerFunc {
 			return
 		}
 
-		parsedDate, err := time.Parse("02-01-2006", booking.JourneyDate)
-		if err != nil {
+		parsedDate, err := utils.ValidDate(booking.JourneyDate)
+		if err!=nil{
 			logger.Logs.Error().Err(err)
-			http.Error(w, "Not a valid date", http.StatusBadRequest)
+			http.Error(w, "Recieved Invalid date", http.StatusBadRequest)
 			return
 		}
+
 		validFutureDate := parsedDate.Compare(time.Now())
 		if validFutureDate == -1 {
 			logger.Logs.Error().Msg("Dates before today's date not allowed")
@@ -33,18 +35,28 @@ func BookingHandler(buses *[]types.Bus) http.HandlerFunc {
 		}
 		bill := types.Bill{}
 		bookingDone := false
-		for _, val := range *buses {
-			if !val.BookedStatus[booking.JourneyDate] && val.Source == booking.Source && val.Dest == booking.Dest {
-				val.BookedStatus[booking.JourneyDate] = true
-				bill.Bus_Number = val.No
+		for _, bus := range *buses {
+			if bus.Source == booking.Source && bus.Dest == booking.Dest {
+				availableSeatsOnDate, exists := bus.AvailableSeatsOnDate[booking.JourneyDate]
+				if exists {
+					if availableSeatsOnDate < booking.NoOfSeats {
+						continue
+					} else {
+						bus.AvailableSeatsOnDate[booking.JourneyDate] -= booking.NoOfSeats
+					}
+
+				} else {
+					bus.AvailableSeatsOnDate[booking.JourneyDate] = bus.TotalSeats - booking.NoOfSeats
+				}
+				bill.Bus_Number = bus.No
 				bill.BookingDate = time.Now().Local().Weekday().String() + " " + time.Now().Format(("2006-01-02 15:04:05"))
 				bill.JounrneyDate = booking.JourneyDate
 				bill.CustomerName = booking.Name
 				bill.Contact = booking.Contact
-				bill.TotalFare = val.Fare * float64(val.TotalSeats)
+				bill.TotalFare = bus.Fare * float64(booking.NoOfSeats)
 				bill.Source = booking.Source
 				bill.Dest = booking.Dest
-				bill.Booked_Seats = val.TotalSeats
+				bill.Booked_Seats = booking.NoOfSeats
 				bookingDone = true
 				break
 			}
